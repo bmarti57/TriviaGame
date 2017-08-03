@@ -3,13 +3,29 @@ $(document).ready(function() {
 	var correctAnswer = 0;
 	var wrongAnswer = 0;
 	var noAnswer = 0;
-	var userAnswer = [];
-	var question = ["What is the capital of New York?", "What is the capital of California?", "What is the capital of Florida?", "What is the capital of Texas?"];
-	var answerKey = ["Albany", "Sacramento", "Tallahassee", "Austin"];
-	var timer = 30;
+	var displayQues = 0;
+	var trivia = [
+		{question: "What is the capital of New York?",
+		 choices: ["New York City", "Albany", "Kingston", "Poughkeepsie"],
+		 answer: 1
+		},
+		{question: "What is the capital of California?",
+		 choices: ["San Diego", "Los Angeles", "San Francisco", "Sacramento"],
+		 answer: 3
+		},
+		{question: "What is the capital of Florida?",
+		 choices: ["Tallahassee", "Miami", "Tampa Bay", "Orlando"],
+		 answer: 0
+		},
+		{question: "What is the captial of Texas",
+		 choices: ["Austin", "Dallas", "Houston", "San Antonio"],
+		 answer: 0
+		}
+	];
+	var timer = 15;
 	var reset = 5;
 	var intervalId;
-
+    var userAnswer;
 
 	//Start Timer
     function run() {
@@ -26,6 +42,7 @@ $(document).ready(function() {
       }
     }
 
+    //Next Page 
     function nextPage() {
     	intervalId = setInterval(countDown, 1000);
     }
@@ -43,14 +60,21 @@ $(document).ready(function() {
 		clearInterval(intervalId);
     }
 
-    function rightWrong() {
-    	if (userAnswer === answerKey[i]) {
-    		correctAnswer++;
-    		userAnswer = [];
+    //Question Page
+    $("#question").html("<h3>" + trivia[displayQues].question + "</h3>");
+        for (var i = 0; i < 4; i++) {
+            var choiceList = $("<div>");
+            choiceList.text(trivia[displayQues].choices[i]);
+            choiceList.attr({'data-index': i});
+            choiceList.addClass("thisChoice");
+            $("#choice").append(choiceList);
+        }
 
-    	}
-    }
-
+    $(".thisChoice").on("click", function() {
+        userAnswer = $(this).data("index");
+        stop();
+        
+    });
 
 
 });//document.ready

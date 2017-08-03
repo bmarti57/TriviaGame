@@ -11,3 +11,15 @@ body {
 	background-image: url("../images/capital.jpg");
 	background-size: cover;
 }
+
+#clock {
+	font-size: 18px;
+}
+
+#question{
+	font-size: 18px;
+}
+
+#choice{
+	font-size: 16px;
+}
