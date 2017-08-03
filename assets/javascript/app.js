@@ -2,16 +2,11 @@ $(document).ready(function() {
 
 	var correctAnswer = 0;
 	var wrongAnswer = 0;
+	var noAnswer = 0;
 	var userAnswer = [];
-	var answerKey = {
-		questionOne: "answer1",
-		questionTwo: "answer2",
-		questionThree: "answer 3",
-		questionFour: "answer 4",
+	var question = ["What is the capital of New York?", "What is the capital of California?", "What is the capital of Florida?", "What is the capital of Texas?"];
+	var answerKey = ["Albany", "Sacramento", "Tallahassee", "Austin"];
 
-	
-
-	};//answerKey object
 
 
 }); //document.ready function

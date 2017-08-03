@@ -1,7 +1,13 @@
 #trivia-screen {
 	text-align: center;
-	background-color: purple;
+	background-color: black;
+	opacity: 0.75;
 	color: white;
 	margin-top: 90px;
 	margin-bottom: 20px;
+}
+
+body {
+	background-image: url("../images/capital.jpg");
+	background-size: cover;
 }
