@@ -1,25 +1,26 @@
-#trivia-screen {
+.panel {
 	text-align: center;
-	background-color: black;
 	opacity: 0.75;
-	color: white;
+	background-color: white;
+	color: black;
 	margin-top: 90px;
 	margin-bottom: 20px;
 }
 
+.panel-heading {
+	text-align: center;
+	opacity: 0.75;
+	background-color: white;
+	color: black;
+
+}
+
 body {
-	background-image: url("../images/capital.jpg");
+	background-image: url("../images/court.jpg");
 	background-size: cover;
 }
 
-#clock {
-	font-size: 18px;
-}
-
-#question{
-	font-size: 18px;
-}
-
-#choice{
-	font-size: 16px;
+.smallimage {
+	height: 200px;
+	width: 200px;
 }
